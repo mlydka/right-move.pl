@@ -1,0 +1,26 @@
+%h3.header Oferty
+
+%table
+  %tr
+    %th Ulica
+    %th Numer
+    %th Kategoria
+    %th Typ
+    %th Status
+    %th Kod
+    %th &nbsp;
+    %th &nbsp;
+
+  - @offers.each do |offer|
+    %tr
+      %td= offer.address.street
+      %td= offer.address ? offer.address.apartment : '&nbsp;'
+      %td= offer.category ? offer.category.name : '&nbsp;' 
+      %td= offer.type.name if offer.type
+      %td= image_tag "admin/#{offer.status ? 'yes.jpg' : 'no.jpg'}"
+      %td= offer.code
+      %td= link_to 'Edytuj', edit_admin_offer_path(offer)
+      %td= link_to 'Usuń',   admin_offer_path(offer), {:method => :delete, :confirm => "Are you sure?"}
+
+%br
+= link_to 'Dodaj', new_admin_offer_path

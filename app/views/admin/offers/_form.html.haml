@@ -1,0 +1,49 @@
+.row
+  %span
+    = form.label(:category_id, 'Typ nieruchomości')
+    %select{ :name => 'offer[category_id]', :id => 'offer_category_id', :disabled => !@offer.new_record? }
+      %option{ :value => ''} Please select
+      = option_groups_from_collection_for_select(Category.find_all_by_parent_id(nil), :children, :name, :id, :name, @offer.category_id)
+    = error_message_on @offer, :category_id, :prepend_text => 'Category '
+
+  %span
+    = form.label(:type_id, 'Rodzaj oferty')
+    = form.collection_select :type_id, Type.find(:all), :id, :name, { :include_blank => true }
+    = error_message_on @offer, :type_id, :prepend_text => 'Type '
+    
+  %span
+    = form.label(:code, 'Numer oferty')
+    = form.text_field :code, :maxlength => 4
+    = error_message_on @offer, :code, :prepend_text => 'Code '
+    
+    = form.hidden_field :serial if @offer.new_record?
+
+  %span
+    = form.label(:status, 'Status')
+    .r
+      %label{:for => 'offer_status_false'}
+        = form.radio_button :status, false
+        nieaktywy
+      %label{:for => 'offer_status_true'}
+        = form.radio_button :status, true
+        aktywy
+
+.row
+  = render :partial => 'form_address'
+
+.row#variables
+  - @offer.offers_variables.each_with_index do |offers_variable, index|
+    - categories_variable = @offer.category.parent.categories_variables.find_by_variable_id(offers_variable.variable_id) 
+    = render :partial => 'form_variable', :locals => { :form_variable => offers_variable, :categories_variable => categories_variable }
+    - if index == 4
+      .clear
+
+.row#textarea
+  = form.label(:description, 'Opis')
+  %br
+  = fckeditor_textarea('offer', 'description', :toolbarSet => 'Easy', :width => '509px', :height => '300px')
+  = error_message_on @offer, :description, :prepend_text => 'Opis '
+
+  
+- if @offer.new_record?
+  = observe_field 'offer_category_id', :url => toggle_variables_form_admin_offers_path, :with => 'category_id'

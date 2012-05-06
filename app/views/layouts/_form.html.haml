@@ -1,0 +1,17 @@
+- form_tag search_path, :method => :get do
+  %h2 Wyszukiwarka
+  - field_set_tag do
+    .r
+      %label{:for => 'typ_sprzedaz'} 
+        = radio_button_tag 'typ', 'sprzedaz', true
+        sprzedaż
+      %label{:for => 'type_wynajem'} 
+        = radio_button_tag 'typ', 'wynajem'
+        wynajem
+    .s
+      = select_tag 'categoria', "<option value='wszystki'>typ nieruchomości</option>" + options_from_collection_for_select(Category.find_parents, :name, :name)
+      = select_tag 'lokalizacja', options_for_district_select
+
+    = submit_tag '', :class => 'btn', :name => nil
+    
+    <!-- %p= link_to 'Wyszukiwanie zaawansowane', root_path, {:title => 'Wyszukiwanie zaawansowane'} -->

@@ -1,0 +1,9 @@
+%h3.header Dodaj Artykuł
+
+.form
+  - form_for @article, :url => admin_articles_path do |form|
+    = render :partial => 'form', :object => form
+
+    %p
+      = link_to "Anuluj", admin_articles_path
+      = submit_tag "Utwórz"

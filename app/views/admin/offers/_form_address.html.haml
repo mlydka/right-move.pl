@@ -1,0 +1,20 @@
+- fields_for 'offer[address_attributes]', @address do |f|
+  %span
+    = f.label(:city, 'Miasto')
+    = f.text_field :city
+    = error_message_on @address, :city, :prepend_text => 'City '
+
+  %span
+    = f.label(:district, 'Dzielnica')
+    = f.text_field :district
+    = error_message_on @address, :district, :prepend_text => 'Dzielnica '
+
+  %span
+    = f.label(:street, 'Ulica')
+    = f.text_field :street
+    = error_message_on @address, :street, :prepend_text => 'Street '
+
+  %span
+    = f.label(:apartment, 'Numer')
+    = f.text_field :apartment
+    = error_message_on @address, :apartment, :prepend_text => 'Apartment '

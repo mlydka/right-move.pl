@@ -1,0 +1,7 @@
+Zmienne
+
+%ul
+  - category.variables.each do |variable|
+    %li.checkbox
+      = check_box_tag("category[variable_ids][]", variable.id, true)
+      = variable.name

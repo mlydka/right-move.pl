@@ -1,0 +1,47 @@
+%li
+  - link_to thumbnail.url, { :title => get_offer_link_title_text(thumbnail)} do
+    = image_tag(thumbnail.images.find(:first).public_filename(:small), :size => "65x64", :alt => get_offer_image_alt_text(thumbnail))
+
+    - variables = thumbnail.offers_variables
+    - address = thumbnail.address
+
+    %span
+    - case thumbnail.category.parent.name
+      - when 'mieszkania' then
+        %span{:style=>'font-weight:bold;'}
+          = pluralize_pl(thumbnail.offers_variables.find_by_variable_id(Variable.find_by_name('ilość pokoi')).value, 'pokój', 'pokoje', 'pokoi')
+        &ndash;
+        = "#{variables.find_by_variable_id(Variable.find_by_name('powierzchnia')).value} m2"
+        %br
+        = "ul. #{address.street}"
+        %br
+        = address.district
+      - when 'działki' then
+        %span{:style=>'font-weight:bold;'}
+          = "#{variables.find_by_variable_id(Variable.find_by_name('powierzchnia')).value} m2"
+        %br
+        = "#{address.street}"
+        %br
+        = "gm. #{address.district.split[0]}"
+      - when 'domy' then
+        %span{:style=>'font-weight:bold;'}
+          = pluralize_pl(thumbnail.offers_variables.find_by_variable_id(Variable.find_by_name('ilość pokoi')).value, 'pokój', 'pokoje', 'pokoi')
+        &ndash;
+        = "#{variables.find_by_variable_id(Variable.find_by_name('powierzchnia')).value} m2"
+        %br
+        = "ul. #{address.street}"
+        %br
+        = address.district
+      - when 'lokale użytkowe' then
+        %span{:style=>'font-weight:bold;'}
+          = "#{variables.find_by_variable_id(Variable.find_by_name('typ')).value}"
+        &ndash;
+        = "#{variables.find_by_variable_id(Variable.find_by_name('powierzchnia')).value} m2"
+        %br
+        = "ul. #{address.street}"
+        %br
+        = address.district
+       
+    %br
+    %span{:style=>'font-weight:bold;'}
+      = "#{variables.find_by_variable_id(Variable.find_by_name('cena')).value} PLN"

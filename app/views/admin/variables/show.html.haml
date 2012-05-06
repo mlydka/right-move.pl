@@ -1,0 +1,20 @@
+%h3.header Zmienna
+
+%p
+  = "Nazwa: #{@variable.name}"
+
+%br
+
+%ul
+  - @variable.categories_variables.each do |categories_variable|
+    %br
+    Kategoria:
+    %li{:style => 'margin-left:30px;'}= categories_variable.category.name
+    - unless categories_variable.options.empty?
+      %ul
+        &nbsp; Opcje:
+        - categories_variable.options.each do |option|
+          %li{:style => 'margin-left:30px;'}= option.name
+
+%br
+= link_to 'Wstecz', admin_variables_path

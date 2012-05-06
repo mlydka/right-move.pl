@@ -1,0 +1,9 @@
+= title((@category.parent ? @category.parent.name + ', ' : '') + @category.name) if @category
+
+= render :partial => 'categories/middle_nav'
+
+#page-index
+  #nooffers
+    W chwili obecnej brak ofert.
+
+= setCssClassForEmptyCategory

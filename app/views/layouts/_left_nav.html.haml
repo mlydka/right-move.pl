@@ -1,0 +1,38 @@
+#left
+  %ul
+    %li
+      %div.overlay
+      = link_to 'Mieszkania', root_path, {:title => 'Mieszkania'}
+      %ul
+        %li.s= link_to 'sprzedaż', sell_apartments_path, {:title => 'mieszkania sprzedaż'}
+        %li.w= link_to 'wynajem',  rent_apartments_path, {:title => 'mieszkania wynajem'}
+    %li
+      %div.overlay
+      = link_to 'Domy', root_path, {:title => 'Domy'}
+      %ul
+        %li.s= link_to 'sprzedaż', sell_houses_path, {:title => 'domy sprzedaż'}
+        %li.w= link_to 'wynajem', rent_houses_path, {:title => 'domy wynajem'}
+    %li
+      %div.overlay
+      = link_to 'Działki', root_path, {:title => 'Działki'}
+      %ul
+        %li.s= link_to 'sprzedaż', sell_allotments_path, {:title => 'sprzedaż działki'}
+    %li
+      %div.overlay
+      = link_to 'Lokale<br />użytkowe', root_path, {:title => 'Lokale użytkowe'}
+      %ul
+        %li.s= link_to 'sprzedaż', sell_offices_path, {:title => 'sprzedaż lokale użytkowe'}
+        %li.w= link_to 'wynajem', rent_offices_path, {:title => 'wynajem lokale użytkowe'}
+    %li
+      %div.overlay
+      = link_to 'Obiekty<br />komercyjne', root_path, {:title => 'Obiekty komercyjne'}
+      %ul
+        %li.s= link_to 'sprzedaż', sell_commercials_path, {:title => 'sprzedaż obiekty komercyjne'}
+        %li.w= link_to 'wynajem', rent_commercials_path, {:title => 'wynajem obiekty komercyjne'}
+    %li
+      = link_to 'Zgłoś ofertę', user_offer_path, {:title => 'Zgłoś ofertę'}
+    %li
+      = link_to 'Zgłoś<br />czego szukasz', user_request_path, {:title => 'Zgłoś czego szukasz'}
+
+    %li
+      = render :partial => 'layouts/form'

@@ -1,0 +1,12 @@
+= title 'Artykuły'
+
+#page-index
+  %h1 artykuły
+
+  .Container
+    = link_to image_tag('scroll-down.png', :alt => 'na dół'), '', {:class => 'Scrollbar-Down', :onclick => "return false;", :onmouseover => "startScroll(0, 5);", :onmouseout => "stopScroll();"}
+    = link_to image_tag('scroll-up.png', :alt => 'do góry'), '', {:class => 'Scrollbar-Up', :onclick => "return false;", :onmouseover => "startScroll(0, -5);", :onmouseout => "stopScroll();"}
+
+    #Scroller-1
+      .Scroller-Container
+        = render :partial => 'article', :collection => @articles

@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+price:
+  name: cena
+  position: 1
+  categories: apartments, houses, allotments
+
+area:
+  name: powierzchnia
+  position: 2
+  categories: allotments
+
+floor:
+  name: piętro
+  position: 3
+  categories: apartments

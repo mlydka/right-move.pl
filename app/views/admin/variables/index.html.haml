@@ -1,0 +1,7 @@
+%h3.header Zmienne
+
+#variables
+  = render :partial => 'category', :collection => @categories 
+
+%br
+= link_to 'Dodaj', new_admin_variable_path

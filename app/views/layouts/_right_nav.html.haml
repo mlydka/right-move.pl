@@ -1,0 +1,13 @@
+#right
+  %h2 Nasze oferty
+  
+  .text
+    .Container
+      = link_to image_tag('btn-down.png', :alt => 'na dol'), '', {:class => 'Scrollbar-Down', :onclick => "return false;", :onmouseover => "startScrollR(0, 5);", :onmouseout => "stopScrollR();"}
+      = link_to image_tag('btn-up.png', :alt => 'do góry'), '', {:class => 'Scrollbar-Up', :onclick => "return false;", :onmouseover => "startScrollR(0, -5);", :onmouseout => "stopScrollR();"}
+      
+      .in
+        #Scroller-2
+          .Scroller-Container
+            %ul
+              = render :partial => 'layouts/thumbnail', :collection => @offers_for_slider

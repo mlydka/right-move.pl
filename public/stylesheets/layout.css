@@ -1,0 +1,230 @@
+/* Basic styles */
+*{margin:0;padding:0}
+body{line-height:1}
+img,fieldset{border:0}
+img{vertical-align:bottom}
+a,a:hover{cursor:pointer;text-decoration:none;outline:none}
+ul{list-style:none}
+option{padding:0 .5em 0 1px}
+table{border-collapse:collapse;border-spacing:0}
+td,th{vertical-align:top;text-align:left;font-weight:normal}
+address{font-style:normal}
+h1,h2,h3,h4,h5,h6{font-size:1em;line-height:1.1em;font-weight:normal}
+.clear{clear:both;}
+
+/* html, body */
+html{background:#fff url(../images/html_bg.png) 50% 0 no-repeat;}
+body,input,textarea,select,td{color:#555555;font-size:11px;font-family:arial,sans-serif;}
+#wrapper{width:950px;padding:126px 0 0;margin:0 auto;position:relative;z-index:90;}
+
+#logo{position:absolute;left:0;top:20px;}
+
+#nav-top{position:absolute;right:0;top:43px;}
+#nav-top li{float:left;font-size:14px;}
+#nav-top a{float:left;height:37px;line-height:37px;color:#fff;padding:0 15px;background:#c8c8c8;text-transform:uppercase;}
+#nav-top a:hover, #nav li.active a{background:#5e5e5e;}
+
+#nav-top-2{position:absolute;left:190px;top:126px;z-index:20;background:#F1F1F0;padding-left:1px;}
+#nav-top-2 li{float:left;font-size:14px;text-align:center; width:140px;height:28px;}
+#nav-top-2 a{float:left;width:140px;height:28px;line-height:28px;color:#747474;background:#F1F1F0;text-transform:uppercase;}
+#nav-top-2 a:hover, #nav-top-2 li.active a{background:#B7D032;color:#fff;}
+#nav-top-2 li.unactive a{background:#F1F1F0;}
+
+#main{height:714px;overflow:hidden;background:url('../images/backgrounds/home.jpg') no-repeat 190px 0;}
+.sprzedaz-mieszkania{background:url('../images/backgrounds/sprzedaz-mieszkania.jpg') no-repeat 190px 0 !important;}
+.wynajem-mieszkania{background:url('../images/backgrounds/wynajem-mieszkania.jpg') no-repeat 190px 0 ! important;}
+
+.sprzedaz-domy{background:url('../images/backgrounds/sprzedaz-domy.jpg') no-repeat 190px 0 !important;}
+.wynajem-domy{background:url('../images/backgrounds/wynajem-domy.jpg') no-repeat 190px 0 !important;}
+.sprzedaz-dzialki{background:url('../images/backgrounds/sprzedaz-dzialki.jpg') no-repeat 190px 0 !important;}
+.sprzedaz-lokale-uzytkowe{background:url('../images/backgrounds/sprzedaz-lokale-uzytkowe.jpg') no-repeat 190px 0 !important;}
+.wynajem-lokale-uzytkowe{background:url('../images/backgrounds/wynajem-lokale-uzytkowe.jpg') no-repeat 190px 0 !important;}
+.sprzedaz-obiekty-komercyjne{background:url('../images/backgrounds/sprzedaz-obiekty-komercyjne.jpg') no-repeat 190px 0 !important;}
+.wynajem-obiekty-komercyjne{background:url('../images/backgrounds/wynajem-obiekty-komercyjne.jpg') no-repeat 190px 0 !important;}
+.wyszukiwarka{background:url('../images/backgrounds/wyszukiwarka.jpg') no-repeat 190px 0 !important;}
+.brak-ofert{background:url('../images/backgrounds/brak_ofert.jpg') no-repeat 190px 0 !important;}
+
+#left{width:190px;height:713px;float:left;background:#f1f1f0;}
+
+#left ul{margin:27px 1px 0;}
+#left ul li{position:relative;z-index:9999;float:left;width:188px;border-right:1px solid #e7e7e6;}
+#left ul li div.overlay{height:43px;width:190px;padding:24px 0 0;margin:0 0 1px;background:transparent;position:absolute;top:0;left:0;}
+#left ul li a{display:block;height:43px;padding:24px 0 0;text-align:center;background:#e7e7e6;margin:0 0 1px;font-size:14px;color:#8b8b8b;text-transform:uppercase;line-height:18px;}
+#left ul li a:hover{background:#5e5e5e;color:#fff;}
+#left ul li a.active{background:#5e5e5e;color:#fff;}
+#left ul li.dwa a{height:53px;padding:14px 0 0;}
+#left ul li.dwa li a{height:32px;padding:0;}
+#left ul ul{display:none;position:absolute;left:189px;top:2px;margin:0;}
+#left ul ul li a{padding:0;margin:0;width:74px;text-align:center;height:32px;line-height:32px;background:none;font-size:10px;color:#fff;text-transform:uppercase;}
+#left ul ul li a:hover{background:none;}
+#left ul ul li{width:74px;height:32px;border:0;}
+#left ul ul li.s{background:#E32426;}
+#left ul ul li.s a:hover{background:url(../images/subnav-s.png) no-repeat;}
+#left ul ul li.w{background:#B7D032;}
+#left ul ul li.w a:hover{background:url(../images/subnav-w.png) no-repeat;}
+#left ul li:hover ul{display:block;}
+#left ul li:hover a{background:#5e5e5e;color:#fff;}
+#left ul li:hover li a{background:none;}
+
+#left form{clear:both;height:172px;margin:0 1px;background:url(../images/wyszukiwarka_bg.png) no-repeat;}
+#left form h2{line-height:40px;text-align:center;text-transform:uppercase;color:#8b8b8b;font-size:14px;}
+#left form fieldset{padding:17px 0 0 16px;}
+#left form .r{height:30px;overflow:hidden;}
+#left form .s{height:53px;overflow:hidden;}
+#left form label{font-size:12px;color:#505050;margin-right:12px;}
+#left form label input{vertical-align:middle;width:16px;}
+#left form select{background:#fff;border:1px solid #c5c3bd;font-size:11px;color:#505050;width:152px;margin:0 0 6px;}
+#left form input.btn{margin:0 0 0 48px;width:57px;height:19px;overflow:hidden;background:url(../images/btn-szukaj.png) no-repeat;border:0;cursor:pointer;}
+#left form input.btn:hover{background-position:0 -19px;}
+#left form p{text-align:center;margin-top:25px;line-height:11px;}
+#left form p a{color:#92ad03;}
+#left form p a:hover{text-decoration:underline;}
+
+#content{width:520px;height:713px;float:left;padding:45px 20px 0 21px;position:relative;}
+.c{padding-top:33px !important;}
+
+#right{width:198px;height:713px;float:right;overflow:hidden;}
+#right h2{height:27px;line-height:27px;background:#b7d032;font-size:12px;text-align:center;color:#fff;text-transform:uppercase;}
+#right .text{position:relative;width:198px;height:686px;}
+#right .text .Container{width:198px;height:686px;}
+#right .text .Scrollbar-Up{position:absolute;right:0px;top:0px;height:18px;overflow:hidden;}
+#right .text .Scrollbar-Up:hover img{margin:-18px 0 0;}
+#right .text .Scrollbar-Down{position:absolute;right:0px;bottom:0px;height:18px;overflow:hidden;}
+#right .text .Scrollbar-Down:hover img{margin:-18px 0 0;}
+#right .text .in{padding:18px 0;width:198px;height:650px;}
+#right .text .in #Scroller-2{position:absolute;overflow:hidden;width:198px;height:650px;}
+#right .text .in .Scroller-Container{position:absolute;top:0;left:0;width:198px}
+#right .text .in li{height:108px;overflow:hidden;float:left;width:198px;}
+#right .text .in li span{line-height:18px}
+#right .text .in li a{display:block;height:93px;padding:15px 0 0 10px;color:#4d4d4d;line-height:18px;}
+#right .text .in li img{border:4px solid #fff;margin-right:9px;float:left;}
+#right .text .in li a:hover{background:#5e5e5e;color:#fff;cursor:pointer;}
+
+
+#footer{clear:both;border-top:12px solid #fff;height:53px;position:relative;background:url(../images/footer_bg.jpg) no-repeat;}
+#footer div{color:#8b8b8b;font-weight:bold;line-height:18px;padding:20px 0 0;}
+#footer div a{color:#8b8b8b;}
+#footer div a:hover{text-decoration:underline;}
+
+#footer .left{float:left;width:200px;margin-left:20px;}
+
+#footer .right{float:right;margin-right:0px;width:445px;}
+#footer .right ul{}
+#footer .right li{float:left;}
+#footer .right li a{border-right:1px solid #8b8b8b;padding:0 6px;}
+#footer .right li a.last{border:none;}
+
+
+#page-kontakt{padding:0 0 0 54px;}
+#page-kontakt h1{font-size:16px;color:#abc32a;text-transform:uppercase;padding:37px 48px 50px 0;text-align:right;}
+#page-kontakt .adres{float:right;width:225px;}
+#page-kontakt .adres h2{font-weight:bold;text-transform:uppercase;line-height:20px;}
+#page-kontakt .adres p{color:#555555;line-height:20px;}
+#page-kontakt .adres p.contact{margin-top:40px;}
+#page-kontakt .adres a{color:#555555;}
+#page-kontakt .adres a:hover{text-decoration:underline;}
+#page-kontakt .osoba{height:120px;width:230px;}
+#page-kontakt .osoba h2{color:#88a102;font-weight:bold;text-transform:uppercase;line-height:20px;}
+#page-kontakt .osoba p{color:#555555;line-height:20px;}
+#page-kontakt .osoba img{float:left;border:4px solid #fff;margin-right:15px;}
+#page-kontakt .osoba a{color:#555555;}
+#page-kontakt .osoba a:hover{text-decoration:underline;}
+
+#page-oferta{height:666px;}
+#page-oferta #pic{height:375px;}
+#page-oferta #pic img{border:6px solid #fff;display:block;}
+#page-oferta #pic .hidden{display:none;}
+
+#page-oferta #pic_nav{overflow:hidden;margin:0 0 6px;}
+#page-oferta #pic_nav a{font-size:12px;background:#e7e7e6;border:3px solid #e7e7e6;float:right;width:18px;height:18px;line-height:18px;color:#555555;text-align:center;}
+#page-oferta #pic_nav a:hover{background:#b7cf34;color:#fff;}
+#page-oferta #pic_nav a.active{background:#b7cf34;color:#fff;}
+#page-oferta #pic_nav .wstecz{height:18px;overflow:hidden;}
+#page-oferta #pic_nav .wstecz:hover img{margin:-18px 0 0;}
+#page-oferta #pic_nav .dalej{height:18px;overflow:hidden;}
+#page-oferta #pic_nav .dalej:hover img{margin:-18px 0 0;}
+
+#page-oferta .Container{height:261px;width:505px;position:relative;padding-left:15px;}
+#page-oferta .Container .Scrollbar-Up{position:absolute;right:0px;top:0px;height:21px;overflow:hidden;}
+#page-oferta .Container .Scrollbar-Up:hover img{margin:-21px 0 0;}
+#page-oferta .Container .Scrollbar-Down{position:absolute;right:0px;bottom:0px;height:21px;overflow:hidden;}
+#page-oferta .Container .Scrollbar-Down:hover img{margin:-21px 0 0;}
+#page-oferta .Container #Scroller-1{position:absolute;top:21px;overflow:hidden;width:484px;height:219px;}
+#page-oferta .Container #Scroller-1 .Scroller-Container{position:absolute;top:0;left:0;width:480px;padding-bottom:35px;}
+
+#page-oferta .Container #Scroller-1 .Scroller-Container h2{font-size:12px;font-weight:bold;color:#88A102;}
+#page-oferta .Container #Scroller-1 .Scroller-Container h2 span{color:#717171;}
+#page-oferta .Container #Scroller-1 .Scroller-Container table{border-left:1px solid #B5CB3E;width:240px;float:left;margin:12px 0 20px;display:inline;padding-left:2px;}
+#page-oferta .Container #Scroller-1 .Scroller-Container table.first{width:200px;}
+#page-oferta .Container #Scroller-1 .Scroller-Container th{width:100px;padding:3px 2px;}
+#page-oferta .Container #Scroller-1 .Scroller-Container td{width:120px;padding:3px 2px 3px 10px;text-align:left;font-weight:bold;}
+#page-oferta .Container #Scroller-1 .Scroller-Container .desc{clear:both;padding-right:6px;}
+#page-oferta .Container #Scroller-1 .Scroller-Container p{line-height:18px;}
+
+#page-index #nooffers{margin:85px 0 0 125px;font-weight:bold;padding:5px 0;}
+
+#page-index {height:386px;padding:0 0 0 54px;}
+#page-index h1{font-size:16px;color:#abc32a;text-transform:uppercase;padding:37px 48px 30px 0;text-align:right;}
+#page-index .Container{height:301px;width:465px;position:relative;}
+#page-index .Container p.back{position:absolute;right:30px;bottom:4px;}
+#page-index .Container .Scrollbar-Up{position:absolute;right:0px;top:0px;height:21px;overflow:hidden;}
+#page-index .Container .Scrollbar-Up:hover img{margin:-21px 0 0;}
+#page-index .Container .Scrollbar-Down{position:absolute;right:0px;bottom:0px;height:21px;overflow:hidden;}
+#page-index .Container .Scrollbar-Down:hover img{margin:-21px 0 0;}
+#page-index .Container #Scroller-1{position:absolute;top:21px;overflow:hidden;width:444px;height:259px;}
+#page-index .Container #Scroller-1 .Scroller-Container{position:absolute;top:0;left:0;width:435px;}
+
+#page-index .Container #Scroller-1 .Scroller-Container h2{font-size:12px;color:#88a102;font-weight:bold;text-transform:uppercase; padding-bottom:5px;}
+#page-index .Container #Scroller-1 .Scroller-Container a.h2{font-size:12px;color:#88a102;font-weight:bold;text-transform:uppercase; padding-bottom:5px;}
+#page-index .Container #Scroller-1 .Scroller-Container *{line-height:18px;}
+#page-index .Container #Scroller-1 .Scroller-Container .article{margin-bottom:25px;}
+#page-index .Container #Scroller-1 .Scroller-Container p.more{float:right;}
+#page-index .Container #Scroller-1 .Scroller-Container a{color:#555555;}
+#page-index .Container #Scroller-1 .Scroller-Container a:hover{text-decoration:underline;}
+
+
+#page-formularz h1{font-size:16px;color:#abc32a;text-transform:uppercase;padding:37px 48px 30px 0;text-align:right;}
+#page-formularz .tekst .Akapit a{color:#555555;}
+#page-formularz .tekst .Akapit a:hover{text-decoration:underline;}
+#page-formularz .tekst{height:307px;width:520px;position:relative;}
+#page-formularz .tekst .in{padding:10px;width:480px;height:270px;}
+#page-formularz .tekst h2{font-size:12px;color:#88a102;font-weight:bold;text-transform:uppercase; padding-bottom:5px; padding-top:15px;}
+#page-formularz .tekst p{line-height:18px; padding-bottom:0px; display:block; height:18px;}
+#page-formularz .tekst .Akapit { padding-bottom: 20px; height:auto;}
+
+#page-formularz .tekst .col1 {float:left; padding: 0 10px 0 10px; width: 200px; height: 100%}
+#page-formularz .tekst .col2 {float:right; padding: 0 20px 0 10px; width: 250px; height: 100%}
+
+#page-formularz form fieldset{padding:0px 0 0 16px;}
+#page-formularz form label{font-size:12px; color:#505050;margin-right:0px; text-align:left; }
+#page-formularz form input.textbox{ width: 250px; height: 40px; }
+#page-formularz form input.big{ width: 118px; }
+#page-formularz form label.vlong{margin-right:5px; width: 115px;  float:left; display:block;}
+#page-formularz form label.long{margin-right:2px; width: 95px;  float:left; display:block;}
+#page-formularz form label.medium{width: 95px; line-height:13px; display:block; margin-left:5px; margin-right:5px; float:left;  }
+#page-formularz form label.medium50{width: 60px; display:block; margin-left:5px; margin-right:5px; float:left; line-height: 13px  }
+#page-formularz form label.medium60{width: 75px; line-height:13px; display:block; margin-left:5px; margin-right:5px; float:left;  }
+#page-formularz form label.short{width: 20px; margin-right:5px; margin-left: 5px; text-align:center;  float:left; display:block;}
+#page-formularz form input{vertical-align:middle; margin:0; padding:0;}
+#page-formularz form select{background:#fff;border:1px solid #c5c3bd;font-size:11px;color:#505050;width:164px;margin:0 0 6px;}
+#page-formularz form input.btn{margin:10px 0 0 0px;width:57px;height:19px;overflow:hidden;background:url(../images/btn-szukaj.png) no-repeat;border:0;cursor:pointer;}
+#page-formularz form input.btn:hover{background-position:0 -19px;}
+#page-formularz form input.btn_wys{margin:10px 0 0 0px;width:57px;height:19px;overflow:hidden;background:url(../images/btn-wyslij.jpg) no-repeat;border:0;cursor:pointer;}
+#page-formularz form input.btn_wys:hover{background-position:0 -19px;}
+#page-formularz form input.short { width: 55px; size: 6; float:left;}
+
+
+#content a.center {text-align:center; padding: 3px 0 3px 0; display:block; margin:0 auto; float:none;}
+
+#content p.center  {text-align:center; padding: 3px 0 3px 0;}
+#content p.right  {text-align:right; padding: 3px 0 3px 0;}
+
+#content div.center  {padding: 3px 0 3px 0;}
+#content .col2 .Akapit div.center {height:16px;}
+#content div.center .fieldWithErrors {width: 60px;display:inline}
+#content div.center .fieldWithErrors input {border: 1px solid red;width:120px;height:16px;}
+#content div.center .fieldWithErrors select {border: 1px solid red;}
+
+.clear {clear:both; float:none;}
+
+.formError {margin:0 0 1px 40px;}

@@ -1,0 +1,17 @@
+%p{:style => 'font-weight:bold;'}
+  = category.name
+
+.tr
+  .th &nbsp;
+  .th{:style => 'width:190px;min-width:190px;'} Nazwa
+  .th Status
+  .th &nbsp;
+  .th &nbsp;
+  .th &nbsp;
+  .th &nbsp;
+
+#vars[category]
+  = render :partial => 'categories_variable_row', :collection => category.categories_variables 
+  = sortable_element("vars_category_#{category.id}", {:url => reorder_admin_categories_variables_path, :handle => 'lp', :tag => 'div', :hoverclass  => "'lightgray'" })
+
+%br

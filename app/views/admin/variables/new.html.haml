@@ -1,0 +1,9 @@
+%h3.header Dodaj Zmienną
+
+.form
+  - form_for @variable, :url => admin_variables_path do |form|
+    = render :partial => 'form', :object => form
+
+    %p
+      = link_to "Anuluj", admin_variables_path
+      = submit_tag "Utwórz"

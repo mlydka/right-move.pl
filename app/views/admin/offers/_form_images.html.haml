@@ -1,0 +1,12 @@
+%ul#images
+  = render :partial => 'image', :collection => @offer.images.reject(&:new_record?)
+  = render :partial => 'image', :collection => Image.find_all_by_serial(@offer.serial) if @offer.new_record?
+
+- image = @offer.new_record? ? Image.new(:serial => @offer.serial) : @offer.images.build
+
+- form_for image, :url => upload_image_admin_offers_path, :html => { :multipart => true, :target => 'frame' } do |form|
+  = form.file_field :uploaded_data, :size => 60, :style => 'width:500px'
+  = form.hidden_field( @offer.new_record? ? :serial : :offer_id )
+  = submit_tag "Dodaj"
+
+%iframe#frame{ :name => 'frame', :src => 'about:blank' }

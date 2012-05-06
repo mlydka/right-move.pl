@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+sale:
+  name: sprzedaż
+
+rent:
+  name: wynajem

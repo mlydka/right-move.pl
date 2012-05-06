@@ -1,0 +1,15 @@
+%p
+  = label_tag :name, 'Nazwa'
+  = form.text_field :name, { :disabled => true }
+
+%p
+  = error_message_on @content, :label, :prepend_text => 'Label '
+  = label_tag :label, 'Etykieta'
+  = form.text_field :label
+
+%p
+  = error_message_on @content, :text, :prepend_text => 'Text '
+  = label_tag :text, 'Treść'
+  %br
+  = fckeditor_textarea('content', 'text', :toolbarSet => 'Easy', :width => '453px', :height => '400px')
+    

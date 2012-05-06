@@ -1,0 +1,5 @@
+%li{:id => "image_#{image.id}"}
+  - if image.image?
+    = image_tag(image.public_filename(:small))
+    = link_to_remote("Delete", {:url => destroy_image_admin_offers_path(:image_id => image.id), :method => :delete, :confirm => 'Jesteś pewien ?'})
+

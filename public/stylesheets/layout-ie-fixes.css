@@ -1,0 +1,26 @@
+/* Basic Fixes */
+a:hover{border:0}
+p,li,span,address{line-height:103%}
+div,p,ul,li{zoom:1}
+.clear{overflow:hidden;height:0;}
+
+/*  IE < 7.0 fix - HOVER & FIRST CHILD fix */
+* html #left li,* html #left input{
+  behavior: expression(
+    this.parsed ? 0 : (
+      this.onmouseover=new Function("this.className+=' hover'"),
+      this.onmouseout=new Function("this.className=this.className.replace(' hover','')"),
+      this === this.parentNode.firstChild ? this.className +=' first-child' : this.className=this.className.replace(' first-child',''),
+      this.parsed = 1
+    )
+  );
+}
+
+
+/* variuous IE fixes */
+* html #left ul li.hover ul{display:block;}
+* html #left ul li.hover a{background:#5e5e5e;color:#fff;}
+* html #left ul li.hover li a{background:none;}
+* html #left form input.hover{background-position:0 -19px;}
+
+* html #page-formularz form input.big{float:left;}

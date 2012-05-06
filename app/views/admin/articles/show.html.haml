@@ -1,0 +1,14 @@
+%h3.header Artykuł
+
+%p
+  Tytuł:
+  %br 
+  = @article.title
+
+%p
+  Treść:
+  %br
+  = @article.content
+
+%br
+= link_to 'Wstecz', admin_articles_path

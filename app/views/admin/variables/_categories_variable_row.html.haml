@@ -1,0 +1,9 @@
+- if categories_variable_row.variable
+  .tr[categories_variable_row]
+    .td{:class => 'lp'} &nbsp;
+    .td{:class => 'name'}= categories_variable_row.variable.name
+    .td= link_to_remote(image_tag("admin/#{categories_variable_row.status ? 'yes.jpg' : 'no.jpg'}"), {:url =>change_status_admin_categories_variable_path(categories_variable_row), :method => :put})
+    .td= link_to 'Pokaż', admin_variable_path(categories_variable_row.variable)
+    .td= link_to 'Edytuj', edit_admin_variable_path(categories_variable_row.variable)
+    .td= link_to 'Opcje',  edit_admin_categories_variable_path(categories_variable_row)
+    .td= link_to 'Usuń', admin_categories_variable_path(categories_variable_row), {:method => :delete, :confirm => "Are you sure?"}

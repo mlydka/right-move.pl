@@ -1,0 +1,33 @@
+%p
+  = error_message_on @category, :name, :prepend_text => 'Name '
+  = label_tag :name, 'Nazwa'
+  = form.text_field :name
+
+%p
+  = error_message_on @category, :label, :prepend_text => 'Label '
+  = label_tag :label, 'Nazwa wyświetlana'
+  = form.text_field :label
+
+%p
+  = error_message_on @category, :parent_id, :prepend_text => 'Parent '
+  = label_tag :parent_id, 'Kategoria nadrzędna'
+  = form.collection_select :parent_id, Category.find_parents, :id, :name, { :include_blank => true }
+
+- unless @category.new_record? || @category.is_parent?  
+  %p
+    = label_tag :sell_special_offer_id, 'Oferta wyróżniona - sprzedaż'
+    = form.select(:sell_special_offer_id, options_from_offers_collection(@category, Type.sell), { :include_blank => true }, {:style => 'width:250px;'})
+  %p
+    = label_tag :rent_special_offer_id, 'Oferta wyróżniona - wynajem'
+    = form.select(:rent_special_offer_id, options_from_offers_collection(@category, Type.rent), { :include_blank => true }, {:style => 'width:250px;'})
+  
+  %p
+    = label_tag :has_special_offer_for_parent, 'Wyróżnij oferte w kategori głównej'
+    = form.check_box :has_special_offer_for_parent, { :style => 'width:20px;'}
+
+%p
+  #variables
+    - if !@category.new_record? && @category.parent.blank?
+      = render :partial => 'variables', :locals => { :category => @category }
+
+= observe_field 'category_parent_id', :url => toggle_variables_form_admin_categories_path, :with => 'category_id'

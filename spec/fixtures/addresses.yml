@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+slawkowska_23:
+  offer:     flat
+  firstname: Piotr
+  lastname:  Krawczyk
+  city:      Kraków
+  district:  Centrum
+  street:    Sławkowska
+  apartment: 23/7
+  zip:       30-126 
+  email:     pkrawczyk@example.com
+  phone:     505 505 505

@@ -1,0 +1,10 @@
+%h3.header Edytuj stronę
+
+
+.form
+  - form_for @content, :url => admin_content_path(@content) do |form|
+    = render :partial => 'form', :object => form
+      
+    %p
+      = link_to "Anuluj", admin_path
+      = submit_tag "Zmień"

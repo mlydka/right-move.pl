@@ -1,0 +1,62 @@
+!!! Strict
+%html{ "xml:lang" => "pl", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %title
+      Biuro Nieruchomości RIGHT-MOVE.PL - mieszkania, domy, działki, lokale, sprzedaż, wynajem -
+      = yield :title
+    %meta{'http-equiv' => 'content-type', :content => 'text/html; charset=utf-8'}
+    %meta{'name' => 'Description', :content => 'Działalność RIGHT-MOVE.PL obejmuje miasto Kraków i cały region małopolski dla klientów poszukujących nieruchomości komercyjnych i mieszkaniowych takich jak: działki, domy, lokale użytkowe, hale, magazyny itp.'}
+    %meta{'name' => 'Keywords', :content => 'right-move, biuro nieruchomości, agencja nieruchomości, mieszkania, domy, działki, lokale, sprzedaż, wynajem'}
+
+    = stylesheet_link_tag 'layout', 'lightbox'
+    = javascript_include_tag :defaults, 'builder', 'lightbox', 'scrolling'
+
+    /[if IE]
+      = stylesheet_link_tag 'layout-ie-fixes'
+  %body.index
+    #wrapper
+      %h1= link_to image_tag('logo.png', :alt => 'Right Move Logo', :id => 'logo'), root_path, {:title => 'Right Move Logo'}
+
+      = render :partial => 'layouts/top_nav'
+
+      = yield :middle_nav
+      
+      #main
+        = render :partial => 'layouts/left_nav'
+      
+        #content{:class => "#{['offers','categories'].include?(controller.controller_name) ? 'c' : ''}"}
+          = yield
+
+        = render :partial => 'layouts/right_nav'
+
+      = render :partial => 'layouts/footer'
+    
+    
+    = setCssClassForMainSection
+
+    :javascript
+      var scroller = null;
+      var scrollerR = null;
+
+      Event.observe(document, 'dom:loaded',  function () {
+          if ($("Scroller-1") != undefined) {
+            var el = $("Scroller-1");
+            scroller = new Scrolling.Scroller(el, 480, 250);
+          }
+
+          if ($("Scroller-2") != undefined) {
+            var elR = $("Scroller-2");
+            scrollerR = new Scrolling.Scroller(elR, 198, 650);
+          }
+        }
+      );
+
+
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      
+
+      try {
+        var pageTracker = _gat._getTracker("UA-10682953-1");
+        pageTracker._trackPageview();
+      } catch(err) {}

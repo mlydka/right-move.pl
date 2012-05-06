@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+image:
+  offer:        flat
+  content_type: image/jpeg
+  filename:     image.jpg
+  size:         27882
+  width:        324
+  height:       363
+
+image_thumb:
+  parent:       image
+  content_type: image/jpeg
+  filename:     image_thumb.jpg
+  thumbnail:    thumb
+  size:         20662
+  width:        100
+  height:       100
+
+uploaded_image:
+  content_type: image/jpeg
+  filename:     image.jpg
+  serial:       cd08ca54bc270d3b
+  size:         22882
+  width:        324
+  height:       363
+
+uploaded_image_thumb:
+  parent:       uploaded_image
+  content_type: image/jpeg
+  filename:     image_thumb.jpg
+  thumbnail:    thumb
+  size:         21582
+  width:        100
+  height:       100

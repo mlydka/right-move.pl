@@ -1,0 +1,8 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+flat:
+  category:    oneroom_apartments
+  type:        sale
+  status:      1
+  code:        4321
+  description: To bardzo fajna oferta ...

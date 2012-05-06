@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+first_floor:
+  variable: floor
+  name:     first
+
+second_floor:
+  variable: floor
+  name:     second

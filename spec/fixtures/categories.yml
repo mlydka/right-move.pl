@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+apartments:
+  name: mieszkania
+
+oneroom_apartments:
+  name: jednopokojowe
+  parent: apartments
+  position: 1
+  variables: price, floor
+
+tworooms_apartments:
+  name: dwupokojowe
+  parent: apartments
+  position: 2
+  variables: price, floor
+
+houses:
+  name: domy
+  variables: price
+
+allotments:
+  name: działki
+  variables: price, area

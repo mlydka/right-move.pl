@@ -1,0 +1,28 @@
+
+%h3.header Kategoria
+
+%p
+  = "Nazwa: #{@category.name}"
+
+%br
+
+%p
+  = "Nazwa wyświetlana: #{@category.label}"
+
+%br
+
+- if @category.parent
+  %p
+    = "Kategoria nadrzędna: #{@category.parent.name}" 
+
+%br
+
+%p
+  Zmienne
+
+%ul
+  - @category.variables.each do |variable|
+    %li{:style => 'margin-left:30px;'}= variable.name
+
+%br
+= link_to 'Wstecz', admin_categories_path

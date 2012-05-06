@@ -1,0 +1,78 @@
+= title 'Zgłoś czego szukasz'
+
+#page-formularz
+  %h1 Zgłoś czego szukasz
+
+  .tekst
+    - form_for @user_request, :url => url_for(:action => 'submit_user_request'), :html => { :method => :post } do |form|
+      %fieldset
+        .col1
+          .Akapit
+            %h2 Typ ofery
+            .center
+              %label{:for => 'sprzedaz', :class => 'medium60'}
+                = form.radio_button :type, 'sprzedaz'
+                sprzedaż
+              %label{:for => 'wynajem', :class => 'medium60'}
+                = form.radio_button :type, 'wynajem'
+                wynajem
+            
+            %br
+
+            %h2 Rodzaj nieruchomości
+            .center
+              = form.collection_select :category, Category.find_parents, :name, :name, { :include_blank => true }
+
+            %h2 Twoje Dane
+
+            .center
+              = form.label :firstname, 'imię:', {:class => 'medium50'}
+              = form.text_field :firstname, {:class => 'big'}
+            .center
+              = form.label :lastname, 'nazwisko:', {:class => 'medium50'}
+              = form.text_field :lastname, {:class => 'big'}
+            .center
+              = form.label :phone, 'telefon:', {:class => 'medium50'}
+              = form.text_field :phone, {:class => 'big'}
+            .center
+              = form.label :email, 'email:', {:class => 'medium50'}
+              = form.text_field :email, {:class => 'big'}
+
+        .col2
+          .Akapit
+            %h2 Lokalizacja
+            
+            .center
+              = form.label :city, 'miasto:', {:class => 'medium60'}
+              = form.text_field :city, {:class => 'big'}
+            .center
+              = form.label :district, 'dzielnica:', {:class => 'medium60'}
+              = form.text_field :district, {:class => 'big'}
+            .center
+              = form.label :street, 'ulica:', {:class => 'medium60'}
+              = form.text_field :street, {:class => 'big'}
+
+            %h2 Informacje szczegółowe
+
+            .center
+              = form.label :price_from, 'cena od:', {:class => 'long'}
+              = form.text_field :price_from, {:size => 5, :class => 'short'}
+              = form.label :price_to, 'do:', {:class => 'short'}
+              = form.text_field :price_to, {:size => 5, :class => 'short'}
+
+            .center
+              = form.label :price2_from, 'cena za m&sup2 od:', {:class => 'long'}
+              = form.text_field :price2_from, {:size => 5, :class => 'short'}
+              = form.label :price2_to, 'do:', {:class => 'short'}
+              = form.text_field :price2_to, {:size => 5, :class => 'short'}
+
+            .center
+              = form.label :area_from, 'powierzchnia od:', {:class => 'long'}
+              = form.text_field :area_from, {:size => 5, :class => 'short'}
+              = form.label :area_to, 'do:', {:class => 'short'}
+              = form.text_field :area_to, {:size => 5, :class => 'short'}
+
+          .Akapit
+            %p.right
+              = submit_tag '', :class => 'btn_wys'
+

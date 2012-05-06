@@ -1,0 +1,46 @@
+= title(offer_address_header @offer)
+
+= render :partial => '/categories/middle_nav'
+
+#page-oferta
+  #pic
+    - @offer.images.each_with_index do |image, index|
+      = link_to image_tag(@offer.images[index].public_filename(:medium)), @offer.images[index].public_filename, :rel => 'lightbox[offer]', :title => get_offer_link_title_text(@offer), :class => "a#{index + 1}" + ( index == 0 ? '' : ' hidden' )
+        
+  %p#pic_nav
+    = images_navigation @offer
+  
+  .Container
+    = link_to image_tag('scroll-down.png', :alt => 'na dół'), '', {:class => 'Scrollbar-Down', :onclick => "return false;", :onmouseover => "startScroll(0, 5);", :onmouseout => "stopScroll();"}
+    = link_to image_tag('scroll-up.png', :alt => 'do góry'), '', {:class => 'Scrollbar-Up', :onclick => "return false;", :onmouseover => "startScroll(0, -5);", :onmouseout => "stopScroll();"}                  
+        
+    #Scroller-1
+      .Scroller-Container
+        %h2
+          = offer_address_header(@offer)
+          %span
+            - if ['mieszkania', 'domy'].include?(@offer.category.parent.name)
+              &ndash;
+              = pluralize_pl(@offer.offers_variables.find_by_variable_id(Variable.find_by_name('ilość pokoi')).value, 'pokój', 'pokoje', 'pokoi')
+            &ndash;
+            = "#{@offer.offers_variables.find_by_variable_id(Variable.find_by_name('powierzchnia')).value} m2"
+            &ndash;
+          %span{:style => "color:red;"}
+            = @offer.offers_variables.find_by_variable_id(Variable.find_by_name('cena')).value
+            PLN
+        %table.first
+          %tbody
+            - @offer.offers_variables.find(:all, :limit => 5, :offset => 0).each do |category_variable|
+              %tr
+                %th= category_variable.variable.name
+                %td= category_variable.value.blank? ? '&mdash;' : category_variable.value
+        
+        %table
+          %tbody
+            - @offer.offers_variables.find(:all, :limit => 5, :offset => 5).each do |category_variable|
+              %tr
+                %th= category_variable.variable.name
+                %td= category_variable.value.blank? ? '&mdash;' : category_variable.value
+
+        .desc
+          = @offer.description

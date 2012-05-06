@@ -1,0 +1,12 @@
+%h3.header Dodaj Ofertę
+
+.form
+  - form_for @offer, :url => admin_offers_path, :html => { :multipart => true } do |form|
+    = render :partial => 'form', :object => form
+
+    %p#submit
+      = link_to "Anuluj", admin_offers_path
+      = submit_tag "Utwórz"
+
+  .form_images
+    = render :partial => 'form_images'

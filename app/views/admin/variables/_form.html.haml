@@ -1,0 +1,12 @@
+%p
+  = label_tag :name, 'Nazwa'
+  = error_message_on @variable, :name, :prepend_text => 'Name '
+  = form.text_field :name
+
+#categories
+  Kategorie
+  %ul
+    - Category.find_all_by_parent_id(nil).each do |category|
+      %li.checkbox
+        = check_box_tag("variable[category_ids][]", category.id, @variable.categories.include?(category))
+        = category.name

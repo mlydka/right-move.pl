@@ -1,0 +1,9 @@
+%h3.header Edytuj Kategorię
+
+.form
+  - form_for @category, :url => admin_category_path(@category) do |form|
+    = render :partial => 'form', :object => form
+      
+    %p
+      = link_to "Anuluj", admin_categories_path
+      = submit_tag "Zmień"

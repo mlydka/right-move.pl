@@ -1,0 +1,25 @@
+!!! Strict
+%html{ "xml:lang" => "pl", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %title Right Move - Administration
+    %meta{'http-equiv' => 'content-type', :content => 'text/html; charset=utf-8'}
+
+    = stylesheet_link_tag 'admin/layout', 'admin/menu'
+    = stylesheet_link_tag 'admin/layout-ie-fixes'
+    = javascript_include_tag :defaults, 'admin/menu'
+    = javascript_include_tag :fckeditor
+
+  %body
+
+    #wrapper
+
+      #header
+        = render :partial => 'layouts/admin/top_nav'
+
+      #subheader
+        - [:error, :warning, :notice, :message].each do |key|
+          - if flash[key]
+            %div{:id => key}= flash[key]  
+
+      #container
+        = yield

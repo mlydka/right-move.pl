@@ -1,0 +1,20 @@
+%h3.header Edytuj Opcje
+
+kategoria:
+=@categories_variable.category.name
+%br
+zmienna:
+=@categories_variable.variable.name
+
+.form
+  - form_for @categories_variable, :url => admin_categories_variable_path(@categories_variable) do |form|
+    #options{:style => 'margin:15px 0;'}
+      = render :partial => 'option', :collection => @categories_variable.options
+
+    %p
+      = add_option_link 'Dodaj opcję'
+
+    %p
+      = link_to "Anuluj", admin_variables_path
+      = submit_tag "Zmień"
+

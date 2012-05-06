@@ -1,0 +1,13 @@
+= title @content.label
+
+#page-index
+  %h1
+    = @content.label
+  
+  .Container
+    = link_to image_tag('scroll-down.png', :alt => 'na dół'), '', {:class => 'Scrollbar-Down', :onclick => "return false;", :onmouseover => "startScroll(0, 5);", :onmouseout => "stopScroll();"}
+    = link_to image_tag('scroll-up.png', :alt => 'do góry'), '', {:class => 'Scrollbar-Up', :onclick => "return false;", :onmouseover => "startScroll(0, -5);", :onmouseout => "stopScroll();"}
+      
+    #Scroller-1
+      .Scroller-Container
+        = @content.text

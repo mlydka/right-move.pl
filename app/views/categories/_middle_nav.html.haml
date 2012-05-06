@@ -1,0 +1,5 @@
+- content_for :middle_nav do
+  %ul#nav-top-2
+    - if @main_category && @main_category.name == 'mieszkania'
+      - @main_category.children.each do |child|
+        %li= link_to_category child, @type

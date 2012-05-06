@@ -1,0 +1,6 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+flat_2_price:
+  offer:    flat
+  variable: price
+  value:    1300

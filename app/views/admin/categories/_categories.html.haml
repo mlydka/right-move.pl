@@ -1,0 +1,14 @@
+%table
+  %tr
+    %th Nazwa
+    %th Nadrzędna
+    %th Nazwa wyświetlana
+    %th Kolejność
+    %th &nbsp;
+    %th &nbsp;
+    %th &nbsp;
+
+  - @categories.each do |category|
+    = render :partial => 'category_row', :object => category
+    = render :partial => 'category_row', :collection => category.children
+    

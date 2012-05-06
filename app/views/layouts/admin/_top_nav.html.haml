@@ -1,0 +1,17 @@
+.chromestyle#chromemenu
+  %ul
+    - if logged_in?
+      %li= link_to 'Home', admin_path
+      %li= link_to 'Oferty', admin_offers_path
+      %li= link_to 'Kategorie', admin_categories_path
+      %li= link_to 'Zmienne', admin_variables_path
+      %li= link_to 'Artykuły', admin_articles_path
+      %li= link_to 'Zawartość', admin_path, {:rel => 'dropmenu1'}
+      %li= link_to 'Logout', logout_path
+
+      .dropmenudiv#dropmenu1
+        - Content.all.each do |content|
+          = link_to content.name,  edit_admin_content_path(content)
+
+:javascript
+  cssdropdown.startchrome("chromemenu")

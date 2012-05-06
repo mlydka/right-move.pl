@@ -1,0 +1,11 @@
+- fields_for "offer[offers_variable_attributes][]", form_variable do |form|
+  %span
+    = form.label(:value, form_variable.variable.name.titleize)
+    = error_message_on form_variable, :value, :prepend_text => "#{form_variable.variable.name.titleize} "
+ 
+    - if categories_variable.options.empty?
+      = form.text_field :value, :index => nil
+    - else
+      = form.collection_select :value, categories_variable.options, :name, :name, { :include_blank => true }, :index => nil
+
+    = form.hidden_field :variable_id, :index => nil

@@ -1,0 +1,18 @@
+%h3.header Artykuły
+
+%table
+  %tr
+    %th Tytuł
+    %th &nbsp;
+    %th &nbsp;
+    %th &nbsp;
+
+  - @articles.each do |article|
+    %tr
+      %td= article.title
+      %td= link_to 'Pokaż', admin_article_path(article)
+      %td= link_to 'Edytuj', edit_admin_article_path(article)
+      %td= link_to 'Usuń',   admin_article_path(article), {:method => :delete, :confirm => "Are you sure?"}
+
+%br
+= link_to 'Dodaj', new_admin_article_path

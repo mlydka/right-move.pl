@@ -1,0 +1,7 @@
+.option
+  - new_or_existing = option.new_record? ? 'new' : 'existing'
+  - prefix = "categories_variable[#{new_or_existing}_option_attributes][]"
+
+  - fields_for prefix, option  do |form|
+    = form.text_field :name
+    = link_to_function "usuń" , "$(this).up('.option').remove()"

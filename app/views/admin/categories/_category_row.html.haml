@@ -1,0 +1,8 @@
+%tr[category_row]
+  %td{:style => "font-weight:#{defined?(category_row_counter) ? 'normal' : 'bold'};"}= category_row.name
+  %td= category_row.parent.name if category_row.parent
+  %td= category_row.label
+  %td= category_reorder_link category_row
+  %td= link_to 'Pokaż', admin_category_path(category_row)
+  %td= link_to 'Edytuj', edit_admin_category_path(category_row)
+  %td= link_to 'Usuń',   admin_category_path(category_row), {:method => :delete, :confirm => "Are you sure?"}
