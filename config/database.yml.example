@@ -1,0 +1,18 @@
+defaults: &defaults
+  adapter: mysql
+  host: localhost
+  encoding: utf8
+  username:
+  password:
+
+development:
+  database: right-move_development
+  <<: *defaults
+
+test:
+  database: right-move_test
+  <<: *defaults
+
+production:
+  database: right-move_production
+  <<: *defaults
