@@ -1,12 +1,10 @@
+# -*- coding: utf-8 -*-
 # This file is copied to ~/spec when you run 'ruby script/generate rspec'
 # from the project root directory.
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'spec'
 require 'spec/rails'
-
-# 1.2.2 bug - fixed in new rspec
-Test::Unit::TestCase.fixture_path = RAILS_ROOT + '/spec/fixtures/'
 
 include AuthenticatedTestHelper
 
