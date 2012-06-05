@@ -1,0 +1,15 @@
+bundle
+
+config/*.yml
+db/*.sqlite
+
+log/*.log
+tmp
+
+vendor/bundle
+
+db/schema.rb
+
+Gemfile.lock
+
+*~
